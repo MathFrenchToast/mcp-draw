@@ -1,5 +1,7 @@
 # test requests
 @baseUrl = http://localhost:8000
+
+###
 # basic rectangle
 POST {{baseUrl}}/draw/rectangle
 Content-Type: application/json
@@ -8,6 +10,15 @@ Content-Type: application/json
     "coordinates":[10,10,100,40]
 }
 
+###
+# red rectangle
+POST {{baseUrl}}/draw/rectangle
+Content-Type: application/json
+
+{
+    "coordinates":[200,30,300,40],
+    "fill": "red"
+}
 
 ###
 # basic text
@@ -45,7 +56,7 @@ POST {{baseUrl}}/draw/line
 Content-Type: application/json
 
 {
-    "coordinates":[0,25,100,100, 200,200]
+    "coordinates":[25,70,100,100, 200,200]
 }
 
 ###
@@ -55,6 +66,16 @@ Content-Type: application/json
 
 {
     "coordinates":[50,50,100,100]
+}
+
+###
+# draw an yellow circle
+POST {{baseUrl}}/draw/oval
+Content-Type: application/json
+
+{
+    "coordinates":[50,50,100,100],
+    "fill":"yellow"
 }
 
 ###
