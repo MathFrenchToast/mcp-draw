@@ -1,0 +1,62 @@
+# test requests
+@baseUrl = http://localhost:8000
+# basic rectangle
+POST {{baseUrl}}/draw/rectangle
+Content-Type: application/json
+
+{
+    "coordinates":[10,10,100,40]
+}
+
+
+###
+# basic text
+POST {{baseUrl}}/draw/text
+Content-Type: application/json
+
+{
+    "coordinates":[100,100],
+    "text":"hello world"
+}
+
+
+###
+# draw line
+POST {{baseUrl}}/draw/line
+Content-Type: application/json
+
+{
+    "coordinates":[0,0,100,100]
+}
+
+###
+# draw a green line
+POST {{baseUrl}}/draw/line
+Content-Type: application/json
+
+{
+    "coordinates":[100,100,200,150],
+    "fill": "green"
+}
+
+###
+# draw 2 lines
+POST {{baseUrl}}/draw/line
+Content-Type: application/json
+
+{
+    "coordinates":[0,25,100,100, 200,200]
+}
+
+###
+# draw an oval
+POST {{baseUrl}}/draw/oval
+Content-Type: application/json
+
+{
+    "coordinates":[50,50,100,100]
+}
+
+###
+# clear the canvas
+POST {{baseUrl}}/clear
